@@ -1,0 +1,27 @@
+{
+    "name": "node-red-contrib-dotnsf-gpt35",
+    "version": "1.0.0",
+    "node-red": {
+        "nodes": {
+            "gpt35": "node.js"
+        }
+    },
+    "dependencies": {
+        "axios": "^1.2.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dotnsf/node-red-contrib-dotnsf-gpt35.git"
+    },
+    "keywords": [
+        "node-red",
+        "dotnsf",
+        "colorbar"
+    ],
+    "author": "dotnsf",
+    "license": "MIT",
+    "homepage": "https://github.com/dotnsf/node-red-contrib-dotnsf-gpt35",
+    "engines": {
+        "node": "14.x"
+    }
+}
