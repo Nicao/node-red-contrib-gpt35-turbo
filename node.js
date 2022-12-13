@@ -46,5 +46,5 @@ module.exports = function( RED ){
     });
   };
 
-  RED.nodes.registerType( 'GPT3.5', main );
+  RED.nodes.registerType( 'GPT 3.5', main );
 }
