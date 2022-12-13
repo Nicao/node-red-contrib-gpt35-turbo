@@ -5,8 +5,11 @@ module.exports = function( RED ){
     RED.nodes.createNode( this, config );
     var node = this;
     node.on( 'input', function( msg ){
+      node.status( { fill: "green", shape: "dot", text: "..." } );
+      var IGNORE_PHRASE = 10;  //. 結果の最初のフレーズがこの長さ以下だったら無視する
       var text = msg.payload;
-      var apikey = this.apikey.value;
+      var apikey = config.apikey;
+      //console.log( {apikey} );
       if( apikey ){
         if( text ){
           axios.post( 'https://api.openai.com/v1/completions', {
@@ -29,18 +32,22 @@ module.exports = function( RED ){
                 answer = tmp.join( "\n\n" );
               }
               msg.payload = answer;
+              node.status( {} );
               node.send( msg );
             }else{
               msg.payload = JSON.stringify( result );
+              node.status( {} );
               node.send( msg );
             }
           });
         }else{
           msg.payload = 'Query text is missing.';
+          node.status( {} );
           node.send( msg );
         }
       }else{
         msg.payload = 'API Key is missing.';
+        node.status( {} );
         node.send( msg );
       }
     });
