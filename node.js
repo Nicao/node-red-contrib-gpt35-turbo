@@ -6,7 +6,7 @@ module.exports = function( RED ){
     var node = this;
     node.on( 'input', function( msg ){
       var text = msg.payload;
-      var apikey = this.apikey;
+      var apikey = this.apikey.value;
       if( apikey ){
         if( text ){
           axios.post( 'https://api.openai.com/v1/completions', {
