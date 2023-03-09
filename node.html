@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  RED.nodes.registerType( 'GPT 3.5', {
+  RED.nodes.registerType( 'GPT 3.5 Turbo', {
     category: 'function',
     color: '#AAAA66',
     defaults: {
@@ -10,12 +10,12 @@
     outputs: 1,
     icon: "font-awesome/fa-graduation-cap",
     label: function(){
-      return this.name || "GPT 3.5";
+      return this.name || "GPT 3.5 Turbo";
     }
   });
 </script>
 
-<script type="text/x-red" data-template-name="GPT 3.5">
+<script type="text/x-red" data-template-name="GPT 3.5 Turbo">
   <div class="form-row">
     <label for="node-input-name"><i class="icon-tag"></i> Name</label>
     <input type="text" id="node-input-name" placeholder="Name"/>
@@ -26,6 +26,6 @@
 </script>
 
 <script type="text/x-red" data-help-name="GPT 3.5">
-  <p>GPT 3.5 based query node.</p>
+  <p>GPT 3.5 Turbo based query node.</p>
   <p>You need to edit "API Key" field with your own API Key, which can be generated <a target="_blank" href="https://beta.openai.com/account/api-keys">here</a>.</p>
 </script>
